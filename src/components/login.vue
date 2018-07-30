@@ -1,19 +1,20 @@
 <template>
-    <div class="warp h100 w100 pr">
+    <div class="warp h100 w100 pr" >
         
-            <img src="../assets/login.jpg" alt="">
+            <img src="../assets/login.jpg" alt="" >
         
         <div class="x-y-center register">
             <h1>注册</h1>
             <ul class="uls  flex-column-between white">
-                <!-- <li class="flex-between"><span>姓名</span><input v-model="name" placeholder="请输入姓名" type="text"></li>
-                <li class="flex-between"><span>密码</span><input v-model="pwd" placeholder="密码" type="number"></li> -->
-                <li  @click="submits()" class="submit">点击注册</li>
+                <li class="flex-between"><span>姓名</span><input v-model="name" placeholder="请输入姓名" type="text"></li>
+                <li class="flex-between"><span>密码</span><input v-model="pwd" placeholder="密码" type="number"></li>
+                <li  @click="login()"  class="submit">登陆</li>
             </ul>
         </div>
     </div>
 </template>
 <script>
+import { Toast } from 'mint-ui';
 export default {
     name : 'login',
     data () {
@@ -27,22 +28,50 @@ export default {
     methods : {
         submits () {
             let data = {
-                    name : 'yryyr' ,
-                    pwd : '8437294274',
+                    name : this.name ,
+                    pwd : this.pwd,
                 };
-            data = JSON.stringify(data);
-            console.log(data);
+            // data = JSON.stringify(data);
+            // console.log(data);
             this.$http({
                
                 method : 'post',
-                url : '/login',
+                url : '/register',
                 data : data
             }).then(res=> {
                 console.log(res.data);
             }).catch(err => {
                 console.log(err);
             })
-        }
+        },
+
+        //登陆函数
+                login () {
+
+            let data = {
+                    name : this.name ,
+                    pwd : this.pwd,
+                };
+            // data = JSON.stringify(data);
+            // console.log(data);
+            this.$http({
+               
+                method : 'post',
+                url : '/login',
+                data : data
+            }).then(res=> {
+
+               if (res.data.status ==='1') {
+                   window.location.href = 'http://www.tiantianjia.store';
+               } else {
+                  
+
+                   Toast(res.data.msg);
+               }
+            }).catch(err => {
+                console.log(err);
+            })
+        },
     }
 }
 </script>
