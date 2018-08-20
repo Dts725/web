@@ -40,6 +40,10 @@ a {
   width: 100%;
 }
 
+.w20 {
+  width: 20%;
+}
+
 .flex {
   display: flex;
 }
@@ -48,6 +52,19 @@ a {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-column-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: flex-start;
 }
 
 .flex-center {
@@ -96,10 +113,25 @@ a {
   left: 0;
 }
 
+.h12{
+  height:  1.2rem;
+}
 .fcc {
   color: #cecece;
 }
 
+.bg {
+  background-color: rgb(34, 43, 65);
+}
 .white {
   color: #fff;
+}
+.text-r {
+  text-align: right;
+}
+.text-l {
+  text-align: left;
+}
+.text-c {
+  text-align: center;
 }

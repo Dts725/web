@@ -1,4 +1,4 @@
-<template>
+                                                                <template>
     <div class="warp h100 w100 pr" >
         
             <img src="../assets/login.jpg" alt="" >
@@ -83,7 +83,7 @@ export default {
     }
     .uls {
      
-        line-height: 50px;
+        line-height: 100px;
     }
     .register {
         width: 55%;
@@ -95,7 +95,7 @@ export default {
     }
     input {
         outline: none;
-        height: 25px;;
+        height: 80px;;
         border-radius: 2px;
         text-indent: 10px;
     }
